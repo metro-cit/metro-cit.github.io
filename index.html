@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="jp">
+<html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,6 +10,11 @@
     <meta property="og:image" content="https://avatars.githubusercontent.com/u/197038088?v=4" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/3.0.1/modern-normalize.min.css">
     <style>
+    	html {
+        	background-image: url("https://avatars.githubusercontent.com/u/197038088?v=4");
+            background-repeat: repeat;
+            background-size: 40px;
+        }
     	body {
         	display: flex;
             flex-direction: column;
@@ -18,10 +23,34 @@
             gap: 1rem;
             height: 100vh;
         }
+        body h1 {
+            font-family: sans-serif;
+            font-size: 3rem;
+            letter-spacing: 0.15rem;
+        	color: #fff;
+            text-shadow: -4px 4px #ef3550,
+                         -8px 8px #f48fb1,
+                         -12px 12px #7e57c2,
+                         -16px 16px #2196f3,
+                         -20px 20px #26c6da,
+                         -24px 24px #43a047,
+                         -28px 28px #eeff41,
+                         -32px 32px #f9a825,
+                         -36px 36px #ff5722;
+        }
+        body marquee {
+        	cursor: pointer;
+        }
     </style>
 </head>
 <body>
     <img src="https://avatars.githubusercontent.com/u/197038088?v=4" />
-    <marquee behavior="alternate"><h1>metro-cit</h1></marquee>
+    <marquee behavior="alternate" scrollamount="10" id="marq"><h1>metro-cit</h1></marquee>
+    <script>
+    	const marq = document.getElementById("marq");
+        marq.addEventListener("click", (e) => {
+            marq.scrollAmount += 5
+        });
+    </script>
 </body>
 </html>
